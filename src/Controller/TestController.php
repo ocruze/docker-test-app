@@ -28,4 +28,15 @@ class TestController extends AbstractController
             'path' => 'src/Controller/TestController.php',
         ]);
     }
+
+    /**
+     * @Route("/hola", name="hola")
+     */
+    public function hola()
+    {
+        return $this->json([
+            'message' => 'Holà!',
+            'path' => 'src/Controller/TestController.php',
+        ]);
+    }
 }
