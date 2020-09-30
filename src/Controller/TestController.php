@@ -30,6 +30,17 @@ class TestController extends AbstractController
     }
 
     /**
+     * @Route("/bonjour", name="bonjour")
+     */
+    public function bonjour()
+    {
+        return $this->json([
+            'message' => 'Bonjour !',
+            'path' => 'src/Controller/TestController.php',
+        ]);
+    }
+
+    /**
      * @Route("/hola", name="hola")
      */
     public function hola()
