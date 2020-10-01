@@ -7,13 +7,11 @@ services:
   webserver:
     build:
       context: .
-      dockerfile: docker-config/webserver.dockerfile
+      dockerfile: docker-config/webserver.prod.dockerfile
     container_name: webserver
     working_dir: /var/www/html
-    volumes:
-     - .:/var/www/html
     ports:
-     - "9090:80"
+     - "3000:80"
     networks:
      - symfony
 
