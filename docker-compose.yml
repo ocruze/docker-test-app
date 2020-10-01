@@ -1,0 +1,28 @@
+version: '3'
+
+networks:
+  symfony:
+
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: docker-config/webserver.dockerfile
+    container_name: webserver
+    working_dir: /var/www/html
+    ports:
+     - "3000:80"
+    networks:
+     - symfony
+
+  postgres:
+    image: postgres:10
+    container_name: postgres
+    restart: unless-stopped
+    tty: true
+    ports: 
+     - "4306:3306"
+    networks:
+     - symfony
+    depends_on: 
+     - webserver

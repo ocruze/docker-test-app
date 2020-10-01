@@ -1,17 +1,13 @@
 compile-app:
 	composer update
 
+compile-app-prod:
+	composer update --no-dev
+
 run-tests:
 	php bin/phpunit
 
-travis: compile-app run-tests docker-login docker-push
+travis: compile-app run-tests
 
-docker-login:
-	echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
-
-docker-push:
-	docker build --pull -t ${DOCKER_IMAGE_NAME} .
-	docker push ${DOCKER_IMAGE_NAME}
-
-deploy: compile-app
+deploy: compile-app-prod
 	echo "TODO: deploying app"
