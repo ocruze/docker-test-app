@@ -9,5 +9,5 @@ run-tests:
 
 travis: compile-app run-tests
 
-deploy: compile-app-prod
+deploy: #compile-app-prod
 	echo "TODO: deploying app"
