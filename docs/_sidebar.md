@@ -1,4 +1,2 @@
-<!-- docs/_sidebar.md -->
-
-* [Home](/)
-* [Guide](guide.md)
+<!-- * [A propos](/) -->
+* [Installation](installation.md "Installing and deploying")
